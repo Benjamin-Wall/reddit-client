@@ -1,0 +1,20 @@
+.loading {
+  color: white;
+  animation-name: fadedThanAHoe;
+  animation-duration: 2s;
+}
+
+@keyframes fadedThanAHoe {
+  0% {
+    color: red;
+  }
+  25% {
+    color: yellow;
+  }
+  50% {
+    color: blue;
+  }
+  100% {
+    color: green;
+  }
+}
