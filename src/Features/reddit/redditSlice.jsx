@@ -1,19 +1,19 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-export const getPosts = createAsyncThunk("reddit/getPosts", async () => {
-  const response = await fetch(`https://www.reddit.com/r/home.json`);
+export const getPosts = createAsyncThunk('reddit/getPosts', async (subreddit = 'home') => {
+  const response = await fetch(`https://www.reddit.com/r/${subreddit}.json`);
   const json = await response.json();
   return json.data.children.map((post) => post.data);
 });
 
 const sliceOptions = {
-  name: "reddit",
+  name: 'reddit',
   initialState: {
     posts: [],
     error: false,
     isLoading: false,
-    searchTerm: "",
-    selectedSubreddit: "/r/home",
+    searchTerm: '',
+    selectedSubreddit: '/r/home',
   },
   extraReducers: (builder) => {
     builder

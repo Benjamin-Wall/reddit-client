@@ -1,10 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import "../../assets/css/card.css";
-import "../../assets/css/post.css";
-import "../../assets/css/comment.css";
-import "../../assets/css/avatar.css";
-import "../../assets/css/postLoading.css";
+import '../../assets/css/card.css';
+import '../../assets/css/post.css';
+import '../../assets/css/comment.css';
+import '../../assets/css/avatar.css';
 
 export const Card = ({ title, author, num_comments, url, upvotes }) => {
   return (

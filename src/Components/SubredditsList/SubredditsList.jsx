@@ -1,12 +1,13 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   getSubreddits,
   selectIsLoading,
   selectSubreddits,
-} from "../../Features/subreddits/subredditsSlice";
+} from '../../Features/subreddits/subredditsSlice';
+import { Loader } from '../Loader/Loader';
 
-import { Subreddits } from "../Subreddits/Subreddits";
+import { Subreddits } from '../Subreddits/Subreddits';
 
 export const SubredditsList = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ export const SubredditsList = () => {
   return (
     <aside>
       {isLoading ? (
-        <h1 className="loading">Loading...</h1>
+        <Loader />
       ) : (
         <div className="card subreddit-card">
           <h2>Subreddits</h2>

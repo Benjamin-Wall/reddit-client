@@ -1,26 +1,27 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  getPosts,
-  selectIsLoading,
-  selectPosts,
-} from "../../Features/reddit/redditSlice";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Route, Routes, useParams } from 'react-router-dom';
+import { getPosts, selectIsLoading, selectPosts } from '../../Features/reddit/redditSlice';
 
-import { Card } from "../Card/Card";
+import { Card } from '../Card/Card';
+import { Loader } from '../Loader/Loader';
 
 export const CardList = () => {
   const dispatch = useDispatch();
   const posts = useSelector(selectPosts);
   const isLoading = useSelector(selectIsLoading);
+  let { subreddit } = useParams();
+
+  subreddit = subreddit === undefined ? 'home' : subreddit;
 
   useEffect(() => {
-    dispatch(getPosts());
-  }, [dispatch]);
+    dispatch(getPosts(subreddit));
+  }, [dispatch, subreddit]);
 
   return (
     <main>
       {isLoading ? (
-        <h1 className="loading">Loading...</h1>
+        <Loader />
       ) : (
         posts.map((post, index) => {
           return (
