@@ -70,7 +70,6 @@ export const Card = ({ title, author, num_comments, url, upvotes }) => {
               ></img>
               <span className="author-username">{author}</span>
             </span>
-            <span> TODO: Calculate UTC</span>
             <span className="post-comments-container">
               <button
                 type="button"
