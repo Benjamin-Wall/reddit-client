@@ -8,7 +8,6 @@ export const NavBar = () => {
   let navigate = useNavigate();
 
   const handleKeyDown = (e) => {
-    e.preventDefault();
     if (e.keyCode === 13) {
       navigate(`/r/${searchTerm}`);
     }
