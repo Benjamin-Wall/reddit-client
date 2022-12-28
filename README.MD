@@ -26,6 +26,7 @@ In this project, my goal is to build a functional Reddit Application that makes 
 
 Here are the following issues:
 
+- When at the root of the page the "r/Home" should be highlighted but its not.
 - The subreddit name is misaligned in the subreddit list.
 - There is only minimal error handling in terms of searching for subreddits.
 - Page general CSS could be improved to provide a more user friendly responsive experience.
