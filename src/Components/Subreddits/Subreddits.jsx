@@ -14,14 +14,17 @@ export const Subreddits = ({ name }) => {
     <>
       <li className={selectedSubreddit === name ? 'selected-subreddit' : 'false'}>
         <button type="button">
-          <Link to={`/${name}`}>
+          <Link
+            to={`/${name}`}
+            className={'link'}
+          >
             <img
               src="https://via.placeholder.com/25"
               alt="subreddit-name"
               className="subreddit-icon"
               style={{ border: '3px solid' }}
             />
-            {name}
+            <span className="subreddit-name">{name}</span>
           </Link>
         </button>
       </li>
