@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
-import "../../assets/css/header.css";
+import '../../assets/css/header.css';
 
 export const NavBar = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  let navigate = useNavigate();
+
+  const handleKeyDown = (e) => {
+    e.preventDefault();
+    if (e.keyCode === 13) {
+      navigate(`/r/${searchTerm}`);
+    }
+  };
+
   return (
     <header>
       <div className="logo">
@@ -27,11 +38,11 @@ export const NavBar = () => {
           type="text"
           placeholder="Search"
           aria-label="Search posts"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyDown={handleKeyDown}
         />
-        <button
-          type="submit"
-          aria-label="Search"
-        >
+        <Link to={`r/${searchTerm}`}>
           <svg
             stroke="currentColor"
             fill="none"
@@ -48,7 +59,7 @@ export const NavBar = () => {
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             ></path>
           </svg>
-        </button>
+        </Link>
       </form>
     </header>
   );
