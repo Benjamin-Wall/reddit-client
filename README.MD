@@ -1,6 +1,6 @@
 # Reddit Client
 
-The live website can be found here: (TODO: Make site live)
+The live website can be found here: https://codecademy-reddit-client.netlify.app/
 
 In this project, i will be building a Reddit Client that uses the Reddit [undocumented JSON API](https://github.com/reddit-archive/reddit/wiki/JSON) for the final front end engineer course from [codecademy](https://www.codecademy.com/)
 
